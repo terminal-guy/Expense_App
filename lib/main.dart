@@ -1,5 +1,6 @@
 import 'package:expense_app/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
@@ -49,11 +50,15 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5.0,
               ),
             ),
-            Card(
-              child: Container(
-                child: Text('LIST OF TX'),
-              ),
-            )
+            Column(
+              children: transactions.map(
+                (tx) {
+                  return Card(
+                    child: Text(tx.title),
+                  );
+                },
+              ).toList(),
+            ),
           ],
         ));
   }
