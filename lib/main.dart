@@ -33,6 +33,9 @@ class MyHomePage extends StatelessWidget {
     ),
   ];
 
+  String titleInput;
+  String amountInput;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,17 +61,26 @@ class MyHomePage extends StatelessWidget {
                   children: [
                     TextField(
                       decoration: InputDecoration(labelText: 'Title'),
+                      onChanged: (value) {
+                        titleInput = value;
+                      },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Amount'),
+                      onChanged: (value) {
+                        amountInput = value;
+                      },
                     ),
                     TextButton(
-                      onPressed: () {},
                       child: Text('Add Transaction'),
                       style: ButtonStyle(
                         foregroundColor:
                             MaterialStateProperty.all(Colors.purple),
                       ),
+                      onPressed: () {
+                        print(titleInput);
+                        print(amountInput);
+                      },
                     ),
                   ],
                 ),
