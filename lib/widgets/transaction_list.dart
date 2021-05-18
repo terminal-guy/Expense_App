@@ -98,3 +98,5 @@ class _TransactionListState extends State<TransactionList> {
           );
   }
 }
+
+// Adding some bling to the transaction list.
